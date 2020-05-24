@@ -43,3 +43,13 @@ console.log((5 > 4) ? 'yes' : 'no');
 let year = 1994;
 year -= 10;
 console.log(year);
+
+function carWash(a, b) {
+
+    let result = a * b;
+
+    return result;
+
+}
+
+console.log(carWash(400, 50));
