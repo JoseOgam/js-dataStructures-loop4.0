@@ -26,6 +26,28 @@ function matrix(n) {
 
         for (let i = endCol; i >= startCol; i--) { //Loop from endCol => startCol
             result[endRow][i] = counter; //Fill in the number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             counter++;
         }
 

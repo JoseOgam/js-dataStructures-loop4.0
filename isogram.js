@@ -7,7 +7,7 @@ function isogram(str) {
 
         if (!newArr[arr[i]]) {
 
-            newArr[arr[i]] === arr[i];
+            newArr[arr[i]] = arr[i];
         } else {
 
             return false;
