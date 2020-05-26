@@ -1,20 +1,29 @@
-class Student {
+class Circle {
+    constructor(radius) {
+        this.radius = 3
+    }
+}
+
+class Perimeter extends Circle {
     constructor() {
-        this.name = 'Joseph Otieno';
+        super();
     }
-
-    student() {
-        return ` is: ${this.name}`;
+    per() {
+        return `the perimeter is:` + 2 * Math.PI * this.radius;
     }
-
 }
 
-class Ogam extends Student {
-    display() {
-        return 'student name ' + super.student();
+class Area extends Circle {
+    constructor() {
+        super();
     }
-
+    ari() {
+        return `the area is:` + Math.PI * this.radius * this.radius;
+    }
 }
 
-let ogam = new Ogam();
-console.log(ogam.display());
+let cal1 = new Perimeter();
+let cal2 = new Area();
+
+console.log(cal1.per());
+console.log(cal2.ari());
