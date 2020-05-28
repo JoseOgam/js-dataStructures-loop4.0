@@ -3,8 +3,9 @@
 // See 'directions' html document
 class Node {
     constructor(data, next = null) {
-        this.next = next;
         this.data = data;
+        this.next = next;
+
     }
 }
 
@@ -12,15 +13,32 @@ class LinkedList {
     constructor() {
         this.head = null;
     }
+    insertFirst(data) {
+        this.head = new Node(data, this.head);
+    }
+    size() {
+        let count = 0;
+        let node = this.head;
+        while (node) {
+            count++;
+            node = node.next;
+        }
+        return count;
+
+    }
+    getFirst() {
+        this.head[this.head - 1];
+    }
+
 }
 
-const list = new LinkedList();
-console.log(list.head);
+var node = new Node('a', 'b');
+// console.log(node.data);
+// console.log(node.next);
 
-const n = new Node('There');
-n.data // 'there'
-n.next // null
-const n2 = new Node('Hi', n);
-n.next // returns n
+var list = new LinkedList();
+list.insertFirst(5);
+list.insertFirst(4);
+list.insertFirst(7);
 
-console.log(n.data);
+console.log(list.getFirst());
