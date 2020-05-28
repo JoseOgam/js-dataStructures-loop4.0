@@ -29,6 +29,47 @@ class LinkedList {
     getFirst() {
         this.head[this.head - 1];
     }
+    get() {
+
+    }
+    clear() {
+        this.head = null;
+    }
+    removeFirst() {
+
+        if (!this.head) {
+            return;
+        } else {
+            this.head = this.head.next;
+            return this.head;
+        }
+
+    }
+    removeLast() {
+
+        if (!this.head) {
+            return;
+        }
+        if (!this.head.next) {
+            this.head = null;
+            return;
+        }
+        let previous = this.head;
+        let current = this.head.next;
+        while (current.next) {
+            previous = current;
+            current = current.next;
+        }
+        previous.next = null;
+
+    }
+    insertLast() {
+
+
+    }
+    getAt() {
+
+    }
 
 }
 
@@ -40,5 +81,6 @@ var list = new LinkedList();
 list.insertFirst(5);
 list.insertFirst(4);
 list.insertFirst(7);
-
-console.log(list.getFirst());
+// list.removeLast();
+list.insertLast(40);
+console.log(list);
