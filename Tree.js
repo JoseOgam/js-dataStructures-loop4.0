@@ -40,4 +40,4 @@ const kingdom = new Node('Kingdom');
 //// associate parents with its childrens
 king.children.push(queen, prince, maids);
 
-console.log(king)
+console.log(king.children);

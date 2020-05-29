@@ -72,14 +72,33 @@ class LinkedList {
 
     }
     insertLast(data) {
-        var last = this.getLast();
-        if (last) {
-            last.next = new Node(data);
-        } else {
-            this.head = new Node(data);
+            var last = this.getLast();
+            if (last) {
+                last.next = new Node(data);
+            } else {
+                this.head = new Node(data);
+            }
         }
+        // returns the node at the provided index
+    getAt(index) {
+        let counter = 0;
+        let node = this.head;
+        while (node) {
+            if (counter === index) {
+                return node;
+            }
+            counter++;
+            node = node.next;
+        }
+        return null;
     }
-    getAt() {
+    removeAt() {
+
+    }
+    insertAt() {
+
+    }
+    forEach() {
 
     }
 
@@ -93,6 +112,4 @@ var list = new LinkedList();
 list.insertFirst(5);
 list.insertFirst(4);
 list.insertFirst(7);
-// list.removeLast();
-list.insertLast(40);
-console.log(list.getLast());
+console.log(list.getAt(6));
