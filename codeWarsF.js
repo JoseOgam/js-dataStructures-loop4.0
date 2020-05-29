@@ -19,4 +19,4 @@ function sumTwoSmallestNumbers(numbers) {
     return result;
 };
 
-console.log(sumTwoSmallestNumbers([8, 3, 5, 1])); // 1 ,3 , 5, 8
+console.log(sumTwoSmallestNumbers([8, 3, 1])); // 1 ,3 , 5, 8
