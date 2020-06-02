@@ -10,34 +10,78 @@
 // on the tree class.  Each method should accept a
 // function that gets called with each element in the tree
 class Node {
-    constructor(value) {
-        this.value = value;
+    constructor(data) {
+        this.data = data;
         this.children = [];
     }
-    add() {
-
+    add(info) {
+        this.children.push(new Node(info));
     }
-    remove() {
+    remove(items) {
+        this.children = this.children.filter((node) => {
+            return node.data !== items;
+        });
 
     }
 }
 
 class Tree {
     constructor(value) {
-        this.value = value;
-        this.children = [];
-        this.parent = null;
+
+        this.root = null;
+    }
+    traverseBF(fn) {
+        var arr = [this.root];
+        while (arr.length) {
+            var node = arr.shift();
+            arr.push(...node.children);
+            fn(node);
+        }
+    }
+    traverseDF(fn) {
+        var arr = [this.root];
+        while (arr.length) {
+            var node = arr.shift();
+            arr.unshift(...node.children);
+            fn(node);
+        }
     }
 }
+var items = [];
+var t = new Tree();
+t.root = new Node(13);
+t.root.add('a');
+t.root.add('b');
+t.root.add('c');
+t.root.add('d');
+t.root.children[1].add('j');
+t.root.children[1].add('k');
 
-// creating nodes with values
-const king = new Node('King');
-const queen = new Node('Queen');
-const prince = new Node('Prince');
-const maids = new Node('Maids');
-const kingdom = new Node('Kingdom');
 
-//// associate parents with its childrens
-king.children.push(queen, prince, maids);
+t.traverseDF((node) => {
+    items.push(node.data);
+})
+console.log(items);
+// // creating nodes with values
+// const king = new Node('King');
+// const queen = new Node('Queen');
+// const prince = new Node('Prince');
+// const princes = new Node('Princes');
+// const maids = new Node('Maids');
 
-console.log(king.children);
+// //// associate parents with its childrens
+// king.children.push(queen);
+// queen.children.push(prince, princes, maids);
+
+// // console.log(king.children);
+// var a = new Node(13);
+// console.log(a);
+
+// a.add('b');
+// a.add('c');
+// a.add('d');
+
+// console.log(a);
+
+// a.remove('d');
+// console.log(a);
