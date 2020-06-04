@@ -13,6 +13,9 @@ class LinkedList {
             this.insertLast(value);
         }
     }
+    getFirst() {
+        return this.head;
+    }
     insertLast(data) {
         const last = this.getLast();
 
@@ -41,21 +44,10 @@ class LinkedList {
 //   circular(l) // true
 
 function circular(list) {
-    let slow, fast;
+    let slow = list.getFirst();
+    let fast = list.getFirst();
 
-    if (!head || !head.next) {
-        return false;
-    }
-
-    slow = head;
-    fast = head;
-
-    if (head.next === head) {
-        return true;
-
-    }
-    while (fast.next.next) {
-
+    while (fast.next && fast.next.next) {
         slow = slow.next;
         fast = fast.next.next;
 
@@ -63,16 +55,21 @@ function circular(list) {
             return true;
         }
     }
-
     return false;
 }
 
-const l = new Li();
-const a = new Node('a');
-const b = new Node('b');
-const c = new Node('c');
+// ----> [A-----B-----C-----D-----E-----F-----G] ---->
+//                                         ------H
+// ------                                   (s,f)
+
+const l = new LinkedList();
+const a = new Node("a");
+const b = new Node("b");
+const c = new Node("c");
+const d = new Node("d");
 l.head = a;
 a.next = b;
 b.next = c;
-c.next = b;
-circular(l); // true
+c.next = d;
+d.next = c;
+console.log(circular(l));

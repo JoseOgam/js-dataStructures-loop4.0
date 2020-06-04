@@ -1,27 +1,17 @@
-// --- Directions
-// Implement a 'peek' method in this Queue class.
-// Peek should return the last element (the next
-// one to be returned) from the queue *without*
-// removing it.
-
 class Queue {
     constructor() {
         this.data = [];
-    }
-
+    }​
     add(record) {
         this.data.unshift(record);
-    }
-
+    }​
     remove() {
         return this.data.pop();
-    }
+    }​
     peek() {
-        //peek at the first item from the queue
-        return this.data[this.data.length - 1]
+        return this.data[this.data.length - 1];
     }
-}
-
+}​
 // --- Directions
 // 1) Complete the upper task first
 // 2) Implement the 'weave' function.  Weave
@@ -45,5 +35,30 @@ class Queue {
 //    q.remove() // 'Hi'
 //    q.remove() // 2
 //    q.remove() // 'There'
-
-function weave(sourceOne, sourceTwo) {}
+function weave(sourceOne, sourceTwo) {
+    const q = new Queue();
+    while (sourceOne.peek() || sourceTwo.peek()) {
+        // if (sourceOne.peek()) q.add(sourceOne.remove());
+        // q.add(sourceOne.remove())
+        // if (sourceTwo.peek()) q.add(sourceTwo.remove());
+        if (sourceOne.peek()) {
+            q.add(sourceOne.remove())
+        }
+        if (sourceTwo.peek()) {
+            q.add(sourceTwo.remove())
+        }​
+    }
+    return q;
+}
+var one = new Queue();
+one.add(1);
+one.add(2);
+one.add(3);
+one.add(4);
+var two = new Queue();
+two.add('one');
+two.add('two');
+two.add('three');
+two.add('four');​
+var dataWeave = weave(one, two);
+console.log(dataWeave);​

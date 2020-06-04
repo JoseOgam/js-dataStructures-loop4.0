@@ -18,10 +18,10 @@ function fib(n) {
 
     //move to this step if the value of n > 1
     else {
-        var s = fib(n - 1);
+        let s = fib(n - 1);
         s.push(s[s.length - 1] + s[s.length - 2]);
         return s;
     }
 };
 
-console.log(fib(3));
+console.log(fib(5));
