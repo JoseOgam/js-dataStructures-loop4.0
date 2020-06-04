@@ -24,12 +24,20 @@
 // fib();
 
 const numbers = () => {
-    let arr = ['b', 'c', 'd', 'e'];
-    arr.push('f', 'g');
-    arr.unshift('a');
-    arr.splice(1, 0, 'h', 'i', 'j', 'k')
-    arr.pop();
-    arr.shift()
-    return arr;
+    // let arr = ['b', 'c', 'd', 'e'];
+    // arr.push('f', 'g');
+    // arr.unshift('a');
+    // arr.splice(1, 0, 'h', 'i', 'j', 'k')
+    // arr.pop();
+    // arr.shift()
+    // return arr;
+    // let arr = [1, 2, 3, 4]
+    // let addByThree = arr.map((e, i) => e + 3);
+    // return addByThree
+
+    let a = [1, 2, 3, 4];
+    let b = ['a', 'b', 'c', 'd'];
+    let result = a.concat(b);
+    return result;
 }
 console.log(numbers());
