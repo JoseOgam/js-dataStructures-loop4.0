@@ -6,3 +6,4 @@ const remove = (s) => {
   return s.replace(/!*$/g, "");
 };
 console.log(remove("!hello!!!!!!!"));
+console.log(new Date());
