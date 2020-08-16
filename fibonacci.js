@@ -10,18 +10,17 @@
 
 // function declaration
 function fib(n) {
+  // simple loop to check if the value of n is equal to one
+  if (n === 1) {
+    return [0, 1]; // array returned if the value of n === 1
+  }
 
-    // simple loop to check if the value of n is equal to one 
-    if (n === 1) {
-        return [0, 1]; // array returned if the value of n === 1
-    }
+  //move to this step if the value of n > 1
+  else {
+    let s = fib(n - 1);
+    s.push(s[s.length - 1] + s[s.length - 2]);
+    return s;
+  }
+}
 
-    //move to this step if the value of n > 1
-    else {
-        let s = fib(n - 1);
-        s.push(s[s.length - 1] + s[s.length - 2]);
-        return s;
-    }
-};
-
-console.log(fib(5));
+console.log(fib(4));
