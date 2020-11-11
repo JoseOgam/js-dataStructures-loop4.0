@@ -6,7 +6,7 @@ var hello = [
       greet: "how are you",
     },
   },
-].map((ogam) => {
-  return ogam.name;
-});
-console.log(hello);
+];
+var ls = hello.map((value) =>
+  console.log(`${value.ogam.name}, ${value.ogam.greet}?`)
+);
