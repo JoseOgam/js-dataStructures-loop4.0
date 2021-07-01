@@ -20,5 +20,3 @@ if (!person.sex)
 console.log(person.sex)
 
 //or
-
-person.
