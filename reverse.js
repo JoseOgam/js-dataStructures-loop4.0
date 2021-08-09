@@ -8,4 +8,31 @@ function digitize(n) {
     return reversedArray;
 }
 
-console.log(digitize(348597));
+// console.log(digitize(348597));
+
+
+// let arr = [1, 2, 3, 4, 5]
+// let add = arr.reduce((a, b) => {
+//     return a + b
+// })
+// console.log(add)
+
+// // for (l of arr)
+// // {
+// //     console.log(l)
+// // }
+
+// // arr.map((n) => {
+// //     console.log(n)
+// // })
+
+// let k = arr.filter((n) => n !== 1)
+// console.log(k)
+
+let str = (n) => {
+    let spt = ("" + n).split('')
+    let reverse = spt.reverse()
+    return reverse
+}
+
+console.log(str(12345))
