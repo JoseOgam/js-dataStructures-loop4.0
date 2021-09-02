@@ -5,3 +5,4 @@ let obj3 = Object.assign(obj1, obj2)
 obj3.c = 6
 
 console.log(obj3)
+
