@@ -1,15 +1,14 @@
 //https://www.codewars.com/kata/5583090cbe83f4fd8c000051/train/javascript
 function digitize(n) {
-    var initialArray = ("" + n).split('');
-    var reversedArray = [];
-    for (var i = initialArray.length - 1; i >= 0; i--) {
-        reversedArray[i] = parseInt(initialArray.shift(), 10);
-    }
-    return reversedArray;
+  var initialArray = ("" + n).split("");
+  var reversedArray = [];
+  for (var i = initialArray.length - 1; i >= 0; i--) {
+    reversedArray[i] = parseInt(initialArray.shift(), 10);
+  }
+  return reversedArray;
 }
 
 // console.log(digitize(348597));
-
 
 // let arr = [1, 2, 3, 4, 5]
 // let add = arr.reduce((a, b) => {
@@ -30,9 +29,26 @@ function digitize(n) {
 // console.log(k)
 
 let str = (n) => {
-    let spt = ("" + n).split('')
-    let reverse = spt.reverse()
-    return reverse
-}
+  let spt = ("" + n).split("");
+  let reverse = spt.reverse();
+  return reverse;
+};
 
-console.log(str(12345))
+console.log(str(12345));
+
+const addNumber = (a, b) => {
+  return a * b;
+};
+
+const performOperation = (a, b, operation) => {
+  return operation(a, b);
+};
+
+let result = performOperation(5, 10, addNumber);
+console.log(result);
+
+let str1 = (n) => {
+  let sep = ("" + n).split("");
+  return sep;
+};
+console.log(str1(12345));
